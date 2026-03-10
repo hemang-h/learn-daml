@@ -1,0 +1,9 @@
+module HelloWorld where
+import Daml.Script
+
+hello: Text -> Text
+hello x = "hello " <> x
+
+testHello: Script ()
+testHello = script do
+    debug $ hello "Wildan"
