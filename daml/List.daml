@@ -1,0 +1,20 @@
+module List where
+
+import Daml.Script
+import DA.List 
+
+testList: Script () = script do
+    let 
+        numList = [1,7,3,9]
+        strList = ["Cristiano", "Mesi", "Neymar"]
+        nameList = ["Abhash", "Arya", "Abif", "Asim", "Aayushi", "Aayush", "Adesh"]
+        listOflists = [[1,2,3], [4,5,6], [7,8,9]]
+
+    debug $ "First element" <> show (head numList)
+    debug $ "Length of strlist: " <> show (length strList)
+    debug $ "Tail of numList: " <> show (tail numList)
+    debug $ "Head of tail of numList: " <> show (head (tail (tail numList)))
+    debug $ "Is strList empty? " <> show (null strList)
+    debug $ "is Empty list empty?: " <> show (null ([]: [Int]))
+    debug $ "Sort the name list: " <> show (sort nameList)
+    debug $ "Show the list of lists: " <> show listOflists
